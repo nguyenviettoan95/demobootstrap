@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" ><link>
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" ><link>
-        <link rel="stylesheet" type="text/css" href="begin.css"></link>
+        <link rel="stylesheet" type="text/css" href="css/begin.css"></link>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -13,12 +13,19 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
       <script type="text/javascript">
-       (function(){
-       $('#cuon').click(function(){
-       $('body,html').animate({scrollTop:0},600);
-       return false;
-       })
-       })(jQuery);
+      $(window).scroll(function () {
+          if ($(this).scrollTop() > 200) {
+      $('#cuon').fadeIn();
+          } else {
+                $('#cuon').fadeOut();
+          }
+  });
+       $(document).ready(function(){
+          $('#cuon').click(function(){
+            $("body,html").animate({scrollTop:0},600);
+            //return false;
+          });
+       });
        </script>
     </head>
     <body class="container-fluid">
@@ -214,7 +221,7 @@
                 <div class="clearfix"></div>
                 <footer>
                   Mọi thông tin liên quan đến trang web, xin vui lòng liên hệ theo địa chỉ Email: toankrb95@gmail.com<br>  
-                                              Phát triển bởi NVT
+                                              Phát triển bởi NVT<br>
                 </footer>
                 
                 <a href="#"><i class="glyphicon glyphicon-chevron-up" id = "cuon" aria-hidden="true"></i></a>
